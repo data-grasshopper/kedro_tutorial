@@ -1,0 +1,70 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in the kedro docs under `Accessing data`
+# You can access the kedro docs by running `kedro docs`
+
+# 01 Raw
+companies:
+  type: CSVLocalDataSet
+  filepath: data/01_raw/companies.csv
+  save_args:
+    index: False
+
+reviews:
+  type: CSVLocalDataSet
+  filepath: data/01_raw/reviews.csv
+  save_args:
+    index: False
+
+shuttles:
+  type: ExcelLocalDataSet
+  filepath: data/01_raw/shuttles.xlsx
+  save_args:
+    index: False
+
+# 02 Pre-processed
+preprocessed_companies:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_companies.csv
+  save_args:
+    index: False
+
+preprocessed_shuttles:
+  type: CSVLocalDataSet
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
+  save_args:
+    index: False
+
+# 03 Primary
+#master_table:
+#  type: CSVLocalDataSet
+#  filepath: data/03_primary/master_table.csv
+#
+## 04 features
+#X_train:
+#  type: CSVLocalDataSet
+#  filepath: data/04_features/X_train.csv
+#
+#X_test:
+#  type: CSVLocalDataSet
+#  filepath: data/04_features/X_test.csv
+#
+#y_train:
+#  type: CSVLocalDataSet
+#  filepath: data/04_features/y_train.csv
+#
+#y_test:
+#  type: CSVLocalDataSet
+#  filepath: data/04_features/y_test.csv
+
+
+# models
+regressor:
+  type: PickleLocalDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true
+
+
+
+
+
